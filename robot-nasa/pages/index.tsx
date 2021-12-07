@@ -1,10 +1,15 @@
 import type { NextPage } from "next";
-import Grid from "./components/grid";
+import React, { useState, useEffect } from "react";
+import Rota from "./components/rota";
+import { Button, Container } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Grid/>
+      <Container bg="blue">
+        <Rota />
+        <Button>restart</Button>
+      </Container>
     </>
   );
 };

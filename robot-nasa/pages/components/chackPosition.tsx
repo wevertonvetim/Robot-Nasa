@@ -1,21 +1,30 @@
-export function move(command, position) {
-  let newPosition = position;
-  let currentDirection = newPosition[2];
+export function validCommand(comando) {
+  let isValid = false;
+  let regex = /[ABCDEFGHIJKNOPQSTUVWX123456789,.!@#$%&*<>]/;
+  if (regex.test(comando) == false) {
+    isValid = true;
+  }
+  return isValid;
+}
+export function checkMovement(command, position) {
+  let vetorPosition = position;
+  let currentDirection = vetorPosition[2];
   let arrayCommand = command.split("");
+
   arrayCommand.map((movimento) => {
-    if (newPosition != false) {
+    if (vetorPosition != false) {
       if (movimento != "M") {
         currentDirection = changeDirection(currentDirection, movimento);
-        newPosition[2] = currentDirection;
+        vetorPosition[2] = currentDirection;
       } else {
-        newPosition = moveRobot(newPosition);
+        vetorPosition = moveRobot(vetorPosition);
       }
     } else {
-      console.log("não entrei na condição");
+      console.log(vetorPosition);
     }
   });
 
-  return newPosition;
+  return vetorPosition;
 }
 
 const changeDirection = (currentDirection, movimento) => {
@@ -54,16 +63,16 @@ const changeDirection = (currentDirection, movimento) => {
 
 const moveRobot = (position) => {
   if (position[2] == "N") {
+    position[0] = position[0] + 1;
+  }
+  if (position[2] == "S") {
+    position[0] = position[0] - 1;
+  }
+  if (position[2] == "E") {
     position[1] = position[1] + 1;
   }
   if (position[2] == "W") {
     position[1] = position[1] - 1;
-  }
-  if (position[2] == "E") {
-    position[0] = position[0] + 1;
-  }
-  if (position[2] == "W") {
-    position[0] = position[0] - 1;
   }
   if (checkPosition(position)) {
     return position;

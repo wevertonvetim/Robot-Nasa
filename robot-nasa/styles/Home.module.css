@@ -107,6 +107,18 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+.north {
+  background-image: url(../public/image/north.png);
+}
+.south {
+  background-image: url(../public/image/south.png);
+}
+.east {
+  background-image: url(../public/image/east.png);
+}
+.west {
+  background-image: url(../public/image/west.png);
+}
 
 @media (max-width: 600px) {
   .grid {
