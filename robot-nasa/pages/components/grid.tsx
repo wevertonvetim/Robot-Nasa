@@ -1,9 +1,8 @@
-import { Container, Box } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import PlanetMars from "./planetMars";
 import { useState } from "react";
 
 function Grid(props) {
-  console.log(props.position+" grid");
   const [matriz, setMatriz] = useState([
     [4, 3, 2, 1, 0],
     [0, 1, 2, 3, 4],

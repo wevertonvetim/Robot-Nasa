@@ -8,7 +8,6 @@ export function validCommand(comando) {
 }
 export function checkMovement(command, position) {
   const oldPosition = position;
-  console.log(oldPosition);
   let currentDirection = position[2];
   let arrayCommand = command.split("");
 
