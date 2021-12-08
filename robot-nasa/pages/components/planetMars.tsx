@@ -4,23 +4,22 @@ import styles from "../../styles/Home.module.css";
 
 function PlanetMars(props) {
   function setRobot(id) {
-    if (`${props.newPosition[0]}${props.newPosition[1]}` == id) {
-      if (props.newPosition[2] == "N") {
+    if (`${props.position[0]}${props.position[1]}` == id) {
+      if (props.position[2] == "N") {
         return <Image src="/image/north.png" key={id} id={id} />;
       }
-      if (props.newPosition[2] == "S") {
+      if (props.position[2] == "S") {
         return <Image src="/image/south.png" key={id} id={id} />;
       }
-      if (props.newPosition[2] == "E") {
+      if (props.position[2] == "E") {
         return <Image src="/image/east.png" key={id} id={id} />;
       }
-      if (props.newPosition[2] == "W") {
+      if (props.position[2] == "W") {
         return <Image src="/image/west.png" key={id} id={id} />;
       }
     } else {
       return (
-        <Box bg="tomato" key={id} id={id}>
-          {id}
+        <Box bg="papayawhip" key={id} id={id} >
         </Box>
       );
     }

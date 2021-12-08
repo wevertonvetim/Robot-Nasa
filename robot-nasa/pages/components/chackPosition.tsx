@@ -7,24 +7,20 @@ export function validCommand(comando) {
   return isValid;
 }
 export function checkMovement(command, position) {
-  let vetorPosition = position;
-  let currentDirection = vetorPosition[2];
+  const oldPosition = position;
+  console.log(oldPosition);
+  let currentDirection = position[2];
   let arrayCommand = command.split("");
 
   arrayCommand.map((movimento) => {
-    if (vetorPosition != false) {
-      if (movimento != "M") {
-        currentDirection = changeDirection(currentDirection, movimento);
-        vetorPosition[2] = currentDirection;
-      } else {
-        vetorPosition = moveRobot(vetorPosition);
-      }
+    if (movimento != "M") {
+      currentDirection = changeDirection(currentDirection, movimento);
+      position[2] = currentDirection;
     } else {
-      console.log(vetorPosition);
+      position = moveRobot([...position]);
     }
   });
-
-  return vetorPosition;
+  return position;
 }
 
 const changeDirection = (currentDirection, movimento) => {
@@ -77,7 +73,7 @@ const moveRobot = (position) => {
   if (checkPosition(position)) {
     return position;
   } else {
-    return false;
+    return [0, 0, "F"];
   }
 };
 
@@ -85,8 +81,9 @@ const checkPosition = (position) => {
   let isValid = true;
   if (position[0] > 4 || position[0] < 0) {
     isValid = false;
-  }
-  if (position[1] > 4 || position[1] < 0) {
+  } else if (position[1] > 4 || position[1] < 0) {
+    isValid = false;
+  } else if (position[2] === "F") {
     isValid = false;
   }
   return isValid;
