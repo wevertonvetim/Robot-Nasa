@@ -1,7 +1,7 @@
-export function validCommand(comando) {
+export function validCommand(command) {
   let isValid = false;
   let regex = /[ABCDEFGHIJKNOPQSTUVWX123456789,.!@#$%&*<>]/;
-  if (regex.test(comando) == false) {
+  if (regex.test(command) == false) {
     isValid = true;
   }
   return isValid;
@@ -11,9 +11,9 @@ export function checkMovement(command, position) {
   let currentDirection = position[2];
   let arrayCommand = command.split("");
 
-  arrayCommand.map((movimento) => {
-    if (movimento != "M") {
-      currentDirection = changeDirection(currentDirection, movimento);
+  arrayCommand.map((movement) => {
+    if (movement != "M") {
+      currentDirection = changeDirection(currentDirection, movement);
       position[2] = currentDirection;
     } else {
       position = moveRobot([...position]);
@@ -22,34 +22,34 @@ export function checkMovement(command, position) {
   return position;
 }
 
-const changeDirection = (currentDirection, movimento) => {
+const changeDirection = (currentDirection, movement) => {
   let newDirection = "sem numero";
   if (currentDirection == "N") {
-    if (movimento == "R") {
+    if (movement == "R") {
       newDirection = "E";
     }
-    if (movimento == "L") {
+    if (movement == "L") {
       newDirection = "W";
     }
   } else if (currentDirection == "E") {
-    if (movimento == "R") {
+    if (movement == "R") {
       newDirection = "S";
     }
-    if (movimento == "L") {
+    if (movement == "L") {
       newDirection = "N";
     }
   } else if (currentDirection == "S") {
-    if (movimento == "R") {
+    if (movement == "R") {
       newDirection = "W";
     }
-    if (movimento == "L") {
+    if (movement == "L") {
       newDirection = "E";
     }
   } else if (currentDirection == "W") {
-    if (movimento == "R") {
+    if (movement == "R") {
       newDirection = "N";
     }
-    if (movimento == "L") {
+    if (movement == "L") {
       newDirection = "S";
     }
   }

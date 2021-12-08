@@ -5,7 +5,7 @@ import {
   Grid as GridChakra,
   Spacer,
 } from "@chakra-ui/react";
-import { checkMovement, validCommand } from "./chackPosition.tsx";
+import { checkMovement, validCommand } from "./checkPosition";
 import { useState, useEffect } from "react";
 import Grid from "./grid";
 import ListPosition from "./listPosition";
@@ -21,8 +21,8 @@ function Rota(props) {
       const newPosition = [...checkMovement(comando, position)];
       if (newPosition[2] !== "F") {
         setPosition(newPosition);
-      } else alert("I do not know this place...");
-    } else alert("I do not speak Englishe!!");
+      } else alert("Coordenada Invalida!!");
+    } else alert("Comando Invalido!!");
     rota.value = "";
   }
   useEffect(() => {
