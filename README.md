@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Robot Nasa
 
-## Getting Started
+Seja bem vindo ao desafio Robot Nasa!!
 
-First, run the development server:
+Este projeto foi desenvolvido como uma etapa no processo seletivo da empresa **UME**.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![Ilustração do app](./public/image/print.png "Tela do app")
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## O Problema:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+A posição do robô é representada pela combinação de coordenadas cartesianas (x, y) e por uma letra, que pode representar uma das quatro orientações: NORTH, SOUTH, EAST e WEST. Para simplificar a navegação, a região a ser explorada foi subdividia em sub-regiões retangulares.
+Uma posição válida de um robô, seria (0, 0, N), que significa que o robô está posicionado no canto esquerdo inferior do terreno, voltado para o Norte.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+**Exemplo:**Assuma que um robô se movimenta para o NORTE em relação ao eixo y. Ou seja, um passo para o NORTE da posição (x,y), é a posição (x, y+1)
+Exemplo: Se o robô está na posição (0,0,N), o comando "MML" fará ele chegar na posição (0,2,W)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Rodando o projeto
 
-## Learn More
+Para rodar o projeto instala-se as dependências com `yarn` ou `npm install`, para rodar apenas com o comando `yarn dev` ou `npm start`.
+Para o desenvolvimento foi usada a biblioteca yarn.
 
-To learn more about Next.js, take a look at the following resources:
+## Estruturação do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto segue estruturado em pastas onde temos a pasta components que contém todos os componentes usados.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Ferramentas.
 
-## Deploy on Vercel
+O projeto foi desenvolvido com a linguagem `JavaScript` e a biblioteca `react`. Como pre processador de css foi utilizado o chakra ui.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estratégia de desenvolvimento.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Dado que para se ter um código legível e menos verboso o projeto está dividido em componentes de estilos e componentes de lógica. Os componentes `CheckPosition` e `Rota` são onde estão contidos a maior parte da lógica implementada neste projeto. Esta estratégia foi adotada para se evitar um código muito verboso além de facilitar a manutenção.
+
+## Melhorias futuras.
+
+Dada a condição de tempo, o produto até então desenvolvido trata-se da versão 0. Como versão 1 foram pensadas algumas melhorias tais como:
+-Ao clicar em um dos botões da lista de posições, o robô seria movido para a posição.
+-Implementar a lógica de mover os robôs através das setas do teclado, por exemplo: Ao clicar na seta cima, o robô move uma casa para a direção norte.
+-A construção de um Back-End constituído de uma API REST para processar a lógica do movimento do robô.
+
+## Considerações finais
+
+As práticas desenvolvidas levaram em consideração uma boa qualidade de código mas tambem visando entregar em tempo hábil.
