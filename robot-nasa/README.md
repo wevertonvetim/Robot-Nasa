@@ -30,6 +30,11 @@ O projeto foi desenvolvido com a linguagem `JavaScript` e a biblioteca `react`. 
 ## Estratégia de desenvolvimento.
 
 Dado que para se ter um código legível e menos verboso o projeto está dividido em componentes de estilos e componentes de lógica. Os componentes `CheckPosition` e `Rota` são onde estão contidos a maior parte da lógica implementada neste projeto. Esta estratégia foi adotada para se evitar um código muito verboso além de facilitar a manutenção.
+<li> checkPosition: Responsável por checar se a posição informado pelo usuário é válida, além de checar e retornar a nova posição do robô
+<li> rota: É responsável por chamar todas os outros componentes, além de guardar e alterar o state da posição do robô
+<li> grid: Responsável por criar a matriz e chamar o componente que ira renderizar o grid passando as props com a posição do robô e o grid criado.
+<li> planetMars: Responsável por executar a lógica para renderizar o grid.
+<li> listPosition: Responsável por executar a lógica para renderizar a list de posições
 
 ## Melhorias futuras.
 
