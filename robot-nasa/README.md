@@ -11,7 +11,7 @@ Este projeto foi desenvolvido como uma etapa no processo seletivo da empresa **U
 A posição do robô é representada pela combinação de coordenadas cartesianas (x, y) e por uma letra, que pode representar uma das quatro orientações: NORTH, SOUTH, EAST e WEST. Para simplificar a navegação, a região a ser explorada foi subdividia em sub-regiões retangulares.
 Uma posição válida de um robô, seria (0, 0, N), que significa que o robô está posicionado no canto esquerdo inferior do terreno, voltado para o Norte.
 
-**Exemplo:**Assuma que um robô se movimenta para o NORTE em relação ao eixo y. Ou seja, um passo para o NORTE da posição (x,y), é a posição (x, y+1)
+Exemplo: Assuma que um robô se movimenta para o NORTE em relação ao eixo y. Ou seja, um passo para o NORTE da posição (x,y), é a posição (x, y+1)
 Exemplo: Se o robô está na posição (0,0,N), o comando "MML" fará ele chegar na posição (0,2,W)
 
 ## Rodando o projeto
@@ -34,9 +34,9 @@ Dado que para se ter um código legível e menos verboso o projeto está dividid
 ## Melhorias futuras.
 
 Dada a condição de tempo, o produto até então desenvolvido trata-se da versão 0. Como versão 1 foram pensadas algumas melhorias tais como:
--Ao clicar em um dos botões da lista de posições, o robô seria movido para a posição.
--Implementar a lógica de mover os robôs através das setas do teclado, por exemplo: Ao clicar na seta cima, o robô move uma casa para a direção norte.
--A construção de um Back-End constituído de uma API REST para processar a lógica do movimento do robô.
+<li>Ao clicar em um dos botões da lista de posições, o robô seria movido para a posição.
+<li>Implementar a lógica de mover os robôs através das setas do teclado, por exemplo: Ao clicar na seta cima, o robô move uma casa para a direção norte.
+<li>A construção de um Back-End constituído de uma API REST para processar a lógica do movimento do robô.
 
 ## Considerações finais
 
